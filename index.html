@@ -1,455 +1,466 @@
- }
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiNails - Prayer-Friendly Press-On Nails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-        
-        header {
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #764ba2;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #764ba2;
-        }
-        
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
             position: relative;
+            z-index: 10;
         }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .hero-text .description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.6);
-        }
-        
-        .nail-showcase {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+
+        header {
+            padding: 20px 0;
             text-align: center;
         }
-        
-        .nail-demo {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin: 2rem 0;
+
+        .logo {
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
         }
-        
-        .nail {
-            height: 60px;
-            border-radius: 50px 50px 20px 20px;
-            cursor: pointer;
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,255,255,0.2); }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.4); }
+        }
+
+        .tagline {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
-        
-        .nail:nth-child(1) { 
-            background: linear-gradient(135deg, #ff9a9e, #fecfef); 
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-        .nail:nth-child(2) { 
-            background: linear-gradient(135deg, #a8edea, #fed6e3); 
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
         }
-        .nail:nth-child(3) { 
-            background: linear-gradient(135deg, #ffecd2, #fcb69f); 
+
+        .features-section {
+            background: rgba(255,255,255,0.95);
+            margin: 80px 0;
+            border-radius: 20px;
+            padding: 60px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
         }
-        .nail:nth-child(4) { 
-            background: linear-gradient(135deg, #ff8a80, #ea80fc); 
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .nail:nth-child(5) { 
-            background: linear-gradient(135deg, #84fab0, #8fd3f4); 
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .nail:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-        
-        .nail.removing {
-            animation: popOff 0.6s ease forwards;
-        }
-        
-        @keyframes popOff {
-            0% { 
-                transform: scale(1) rotate(0deg); 
-            }
-            50% { 
-                transform: scale(1.2) rotate(10deg) translateY(-10px); 
-            }
-            100% { 
-                transform: scale(0.8) rotate(20deg) translateY(-50px); 
-                opacity: 0; 
-            }
-        }
-        
-        .demo-text {
-            margin-top: 1rem;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .reset-btn {
-            margin-top: 1rem; 
-            padding: 0.5rem 1rem; 
-            border: none; 
-            border-radius: 20px; 
-            background: #667eea; 
-            color: white; 
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .reset-btn:hover {
-            background: #5a6fd8;
-        }
-        
-        .features {
-            padding: 6rem 0;
-            background: white;
-        }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 40px;
+            margin-bottom: 60px;
         }
-        
-        .feature {
+
+        .feature-card {
             text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 40px 30px;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-        }
-        
-        .testimonials {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
             border-radius: 15px;
-            margin: 1rem auto;
-            max-width: 600px;
-            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        footer {
-            background: #333;
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .benefits-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 60px;
+            backdrop-filter: blur(10px);
+            margin: 40px 0;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.2);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            font-size: 2em;
+            margin-right: 20px;
+            color: #fff;
+        }
+
+        .benefit-text {
             color: white;
+            font-weight: 500;
+        }
+
+        .testimonial-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 60px;
+            margin: 40px 0;
             text-align: center;
-            padding: 3rem 0;
+            backdrop-filter: blur(10px);
         }
-        
-        .contact-title {
-            color: white; 
-            margin-bottom: 1rem; 
-            font-size: 2rem;
+
+        .testimonial {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
         }
-        
-        .contact-text {
-            font-size: 1.2rem; 
-            margin-bottom: 1rem;
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
         }
-        
-        .email-link {
-            font-size: 1.1rem; 
-            margin-bottom: 1rem; 
-            display: block;
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255,255,255,0.8);
         }
-        
-        .email-link a {
-            color: #ff6b6b; 
-            text-decoration: none;
-        }
-        
-        .email-link a:hover {
-            text-decoration: underline;
-        }
-        
+
         @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
+            .hero-title {
+                font-size: 2.5em;
             }
             
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .features-section,
+            .benefits-section,
+            .testimonial-section {
+                padding: 40px 20px;
+                margin: 40px 10px;
             }
             
-            .nav-links {
-                display: none;
-            }
-            
-            .nail-demo {
-                grid-template-columns: repeat(3, 1fr);
+            .container {
+                padding: 0 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">FlexNails</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Shop</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Press. Wear. Pop Off!</h1>
-                        <p class="subtitle">The Revolutionary Press-On Nails</p>
-                        <p class="description">
-                            Salon-quality nails in under 1 minute! Apply instantly and pop them off just as easily. 
-                            No water, no soaking, no damage - just gorgeous nails whenever you want them.
-                        </p>
-                        <a href="#contact" class="cta-button">Shop Now - Starting at $19</a>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="nail-showcase">
-                            <h3>Try Our Interactive Demo!</h3>
-                            <div class="nail-demo" id="nailDemo">
-                                <div class="nail" onclick="removeNail(this)"></div>
-                                <div class="nail" onclick="removeNail(this)"></div>
-                                <div class="nail" onclick="removeNail(this)"></div>
-                                <div class="nail" onclick="removeNail(this)"></div>
-                                <div class="nail" onclick="removeNail(this)"></div>
-                            </div>
-                            <p class="demo-text">Click any nail to see instant pop-off removal!</p>
-                            <button onclick="resetDemo()" class="reset-btn">Reset Demo</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features" id="features">
-            <div class="container">
-                <h2 class="section-title">Why Choose FlexNails?</h2>
-                <p class="section-subtitle">The perfect blend of style, convenience, and nail health</p>
-                
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">⚡</div>
-                        <h3>60-Second Application</h3>
-                        <p>Complete manicure in under 1 minute! No prep, no drying time, no tools needed. Just press and you're done!</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">👆</div>
-                        <h3>Instant Pop-Off</h3>
-                        <p>Remove in seconds with just your fingers! No water, no soaking, no mess. They pop right off when you're ready.</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Reusable Design</h3>
-                        <p>Use them multiple times! Each set can be worn 3-5 times with proper care. Maximum value for your money.</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">💎</div>
-                        <h3>Salon Quality</h3>
-                        <p>Professional-grade materials and designs. Get that fresh-from-the-salon look at home.</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">🌈</div>
-                        <h3>Endless Variety</h3>
-                        <p>100+ designs to choose from. Switch your style as often as you want - daily if you like!</p>
-                    </div>
-                    
-                    <div class="feature">
-                        <div class="feature-icon">🏠</div>
-                        <h3>At-Home Convenience</h3>
-                        <p>Skip the salon appointment. Perfect nails anytime, anywhere. Travel-friendly and mess-free.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <div class="container">
-                <h2 class="section-title">What Our Customers Say</h2>
-                <div class="testimonial-card">
-                    <p>"OMG these are incredible! I had a full set on in literally 45 seconds and popped them off just as fast when I got home. No mess, no fuss - just perfect nails instantly!"</p>
-                    <h4>- Sarah M., Verified Buyer</h4>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
+    <div class="gradient-bg">
+        <div class="floating-particles"></div>
+        
         <div class="container">
-            <h2 class="contact-title">Ready to Shop?</h2>
-            <p class="contact-text">Contact us to place your order!</p>
-            <p class="email-link">📧 <a href="mailto:hannahaaboshady@gmail.com">hannahaaboshady@gmail.com</a></p>
-            <p>&copy; 2025 FlexNails. All rights reserved. | Free shipping on orders over $50</p>
+            <header>
+                <div class="logo">FlexiNails</div>
+                <div class="tagline">Beautifully Designed for Devotion</div>
+            </header>
+
+            <section class="hero-section">
+                <h1 class="hero-title">Prayer-Perfect Nails</h1>
+                <p class="hero-subtitle">Experience beauty without barriers to your spiritual practice</p>
+                <a href="mailto:hannahaboshady@gmail.com?subject=FlexiNails%20Order%20Inquiry&body=Hi!%20I'm%20interested%20in%20ordering%20FlexiNails%20press-on%20nails.%20Please%20send%20me%20more%20information%20about%20available%20sets%20and%20pricing." class="cta-button">Shop Now</a>
+            </section>
+
+            <section class="features-section">
+                <h2 class="section-title">Why Choose Sacred Touch?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🙏</div>
+                        <h3 class="feature-title">Prayer-Optimized Design</h3>
+                        <p class="feature-description">Carefully crafted length and shape that won't interfere with prayer positions or ritual cleansing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💧</div>
+                        <h3 class="feature-title">Water-Friendly</h3>
+                        <p class="feature-description">Designed to maintain adhesion during ablution while allowing proper water flow for purification rituals.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3 class="feature-title">Comfortable & Durable</h3>
+                        <p class="feature-description">Flexible, lightweight materials that move naturally with your hands during prayer and daily activities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits-section">
+                <h2 class="section-title" style="color: white;">Perfect for the Faithful</h2>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⏰</div>
+                        <div class="benefit-text">Quick 5-minute application</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌙</div>
+                        <div class="benefit-text">Ideal for daily prayers</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💝</div>
+                        <div class="benefit-text">Beautiful yet modest designs</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-text">Reusable with proper care</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌿</div>
+                        <div class="benefit-text">Safe, non-toxic materials</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💪</div>
+                        <div class="benefit-text">Won't chip or break during prostration</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonial-section">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="testimonial">
+                    "I've finally found nails that let me maintain my beauty routine without compromising my prayer practice. The length is perfect and I can easily put them back on after prayer!"
+                </div>
+                <div class="testimonial-author">- Shara M., Verified Customer</div>
+            </section>
+
+            <section class="hero-section" id="order">
+                <h2 class="hero-title" style="font-size: 2.5em;">Ready to Transform Your Prayer Experience?</h2>
+                <p class="hero-subtitle">Join thousands of women who've discovered the perfect balance of beauty and devotion</p>
+                <a href="mailto:hannahaboshady@gmail.com?subject=FlexiNails%20Order%20Inquiry&body=Hi!%20I'm%20interested%20in%20ordering%20FlexiNails%20press-on%20nails.%20Please%20send%20me%20more%20information%20about%20available%20sets%20and%20pricing." class="cta-button">Order Your Set Today</a>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2025 FlexiNails Press-On Nails. Designed with love and respect for your faith journey.</p>
+                <p style="font-size: 2.5em; margin-top: 20px; font-weight: bold;">Website Made By Ibrahim</p>
+            </footer>
         </div>
-    </footer>
+    </div>
 
     <script>
-        let removedNails = [];
-        
-        function removeNail(nail) {
-            if (nail.classList.contains('removing')) return;
-            
-            nail.classList.add('removing');
-            removedNails.push(nail);
-            
-            setTimeout(function() {
-                nail.style.visibility = 'hidden';
-                nail.classList.remove('removing');
-            }, 600);
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            const numberOfParticles = 50;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
         }
-        
-        function resetDemo() {
-            var nails = document.querySelectorAll('.nail');
-            nails.forEach(function(nail) {
-                nail.style.visibility = 'visible';
-                nail.classList.remove('removing');
-            });
-            removedNails = [];
-        }
-        
-        // Smooth scrolling for navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            var links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        
-        // Auto-reset demo every 10 seconds
-        setInterval(function() {
-            if (removedNails.length > 0) {
-                resetDemo();
-            }
-        }, 10000);
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            createParticles();
+            
+            // Observe elements for scroll animations
+            document.querySelectorAll('.feature-card, .benefit-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add hover effects for feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
     </script>
 </body>
 </html>
